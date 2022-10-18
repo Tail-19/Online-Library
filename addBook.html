@@ -1,20 +1,60 @@
 <head>
     <title>index</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
-    <meta Author="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8"> 
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <meta Author="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8"/> 
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css"/>
 </head>
 
 <body>
     <!-- <p>Cover: <input id="Cover" type="image"></p> -->
     <input type="file" id="Cover" accept="image/gif, image/jpeg, image/png, image/jpg">
-    <p>Name: <input id="Name" type="text"></p>
-    <p>Author: <input id="Author" type="text"></p>
-    <p>Publisher: <input id="publisher" type="text"></p>
-    <p>Publication Date: <input id="Author" type="text"></p>
-    <p>Quantity: <input id="Author" type="text"></p>
-    <p><input type="submit"></p>
+    <p>
+        Name: <input id="Name" type="text" onfocus="checkInput('Name')" oninput="checkInput('Name')">
+        <font id="Name_alert" color="red"></font>
+    </p>
+    <p>
+        Author: <input id="Author" type="text" onfocus="checkInput('Author')" oninput="checkInput('Author')">
+        <font id="Author_alert" color="red"></font>
+    </p>
+    <p>
+        Publisher: <input id="Publisher" type="text" onfocus="checkInput('Publisher')" oninput="checkInput('Publisher')">
+        <font id="Publisher_alert" color="red"></font>
+    </p>
+    <p>
+        Publication Date: <input id="Publication Date" type="date" onfocus="checkInput('Publication Date')" oninput="checkInput('Publication Date')">
+        <font id="Publication Date_alert" color="red"></font>
+    </p>
+    <p>
+        Quantity: <input id="Quantity" type="text" onfocus="checkInput('Quantity')" oninput="checkInput('Quantity')">
+        <font id="Quantity_alert" color="red"></font>
+    </p>
+    <p><input id="submit" type="submit""></p>
+    <script>
+        function checkInput(id){
+            var info = document.getElementById(id).value;
+            if (info=="")
+                document.getElementById(id+"_alert").innerHTML="Value can't be empty.";
+            else if(id=="Quantity") {
+                if (info < 0 || isNaN(info)) {
+                    document.getElementById(id+"_alert").innerHTML="Please input valid number.";
+                } else {
+                    document.getElementById(id+"_alert").innerHTML="✅";
+                }
+            }
+            else if (id=="Publication Date") {
+                var today = new Date();
+                info = new Date(info);
+                if (info > today) {
+                    document.getElementById(id+"_alert").innerHTML="Please input valid date.";
+                } else {
+                    document.getElementById(id+"_alert").innerHTML="✅";
+                }
+            }
+            else
+                document.getElementById(id+"_alert").innerHTML="✅";
+            console.log(info);
+        }
+    </script>
 </body>
 
 <!-- 如果input的type属性设置为image， 那么用户单击图像的时候，浏览器将以像素为单位，将鼠标相对于图像边界的偏移量发送到服务器
