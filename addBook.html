@@ -6,30 +6,34 @@
 </head>
 
 <body>
-    <!-- <p>Cover: <input id="Cover" type="image"></p> -->
-    <input type="file" id="Cover" accept="image/gif, image/jpeg, image/png, image/jpg">
-    <p>
-        Name: <input id="Name" type="text" onfocus="checkInput('Name')" oninput="checkInput('Name')">
-        <font id="Name_alert" color="red"></font>
-    </p>
-    <p>
-        Author: <input id="Author" type="text" onfocus="checkInput('Author')" oninput="checkInput('Author')">
-        <font id="Author_alert" color="red"></font>
-    </p>
-    <p>
-        Publisher: <input id="Publisher" type="text" onfocus="checkInput('Publisher')" oninput="checkInput('Publisher')">
-        <font id="Publisher_alert" color="red"></font>
-    </p>
-    <p>
-        Publication Date: <input id="Publication Date" type="date" onfocus="checkInput('Publication Date')" oninput="checkInput('Publication Date')">
-        <font id="Publication Date_alert" color="red"></font>
-    </p>
-    <p>
-        Quantity: <input id="Quantity" type="text" onfocus="checkInput('Quantity')" oninput="checkInput('Quantity')">
-        <font id="Quantity_alert" color="red"></font>
-    </p>
-    <p><input id="submit" type="submit""></p>
+    <form>
+            <!-- <p>Cover: <input id="Cover" type="image"></p> -->
+        <input type="file" id="Cover" accept="image/gif, image/jpeg, image/png, image/jpg">
+        <p>
+            Name: <input id="Name" type="text" onfocus="checkInput('Name')" oninput="checkInput('Name')">
+            <font id="Name_alert" color="red"></font>
+        </p>
+        <p>
+            Author: <input id="Author" type="text" onfocus="checkInput('Author')" oninput="checkInput('Author')">
+            <font id="Author_alert" color="red"></font>
+        </p>
+        <p>
+            Publisher: <input id="Publisher" type="text" onfocus="checkInput('Publisher')" oninput="checkInput('Publisher')">
+            <font id="Publisher_alert" color="red"></font>
+        </p>
+        <p>
+            Publication Date: <input id="Publication Date" type="date" onfocus="checkInput('Publication Date')" oninput="checkInput('Publication Date')">
+            <font id="Publication Date_alert" color="red"></font>
+        </p>
+        <p>
+            Quantity: <input id="Quantity" type="text" onfocus="checkInput('Quantity')" oninput="checkInput('Quantity')">
+            <font id="Quantity_alert" color="red"></font>
+        </p>
+        <p><input id="submit" type="submit" onclick={window.alert("submitted")}></p>
+    </form>
+
     <script>
+        //只完成了检查，不会影响到提交结果
         function checkInput(id){
             var info = document.getElementById(id).value;
             if (info=="")
@@ -57,6 +61,6 @@
     </script>
 </body>
 
-<!-- 如果input的type属性设置为image， 那么用户单击图像的时候，浏览器将以像素为单位，将鼠标相对于图像边界的偏移量发送到服务器
-    其中包括从图像左边界开始的水平偏移量和从上边界开始的垂直偏移量
-    如果要实现上传图片的功能，应该将type设置为file-->
+<!-- 如果input的type属性设置为image， 那么用户单击图像的时候，浏览器将以像素为单位，将鼠标相对于图像边界的偏移量发送到服务器 -->
+<!-- 其中包括从图像左边界开始的水平偏移量和从上边界开始的垂直偏移量 -->
+<!-- 如果要实现上传图片的功能，应该将type设置为file -->
