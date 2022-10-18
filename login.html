@@ -1,0 +1,31 @@
+<head>
+    <title>admin-login</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+</head>
+
+<body>
+    <p>Username: <input id="username" type="text"></p>
+    <p>Password: <input id="password" type="text"></p>
+    <!-- get input vlue by .value -->
+
+    <button class="pure-button-primary" onclick="login()">
+        login
+        <!-- <a href="index.html">login</a> -->
+    </button>
+
+
+    <script>
+        function login(){
+            console.log("123");
+            var name = document.getElementById("username").value;
+            var pw = document.getElementById("password").value;
+            if (name=="admin", pw=="123456")
+            window.location.href='index.html';
+            else {
+                alert("Wrong username or passord.")
+            }
+        }
+    </script>
+</body>
