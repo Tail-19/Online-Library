@@ -7,10 +7,16 @@
 </head>
 
 <body>
+    <!-- <p>Cover: <input id="Cover" type="image"></p> -->
+    <input type="file" id="Cover" accept="image/gif, image/jpeg, image/png, image/jpg">
     <p>Name: <input id="Name" type="text"></p>
     <p>Author: <input id="Author" type="text"></p>
     <p>Publisher: <input id="publisher" type="text"></p>
     <p>Publication Date: <input id="Author" type="text"></p>
     <p>Quantity: <input id="Author" type="text"></p>
-    <button>Submit</button>
+    <p><input type="submit"></p>
 </body>
+
+<!-- 如果input的type属性设置为image， 那么用户单击图像的时候，浏览器将以像素为单位，将鼠标相对于图像边界的偏移量发送到服务器
+    其中包括从图像左边界开始的水平偏移量和从上边界开始的垂直偏移量
+    如果要实现上传图片的功能，应该将type设置为file-->
