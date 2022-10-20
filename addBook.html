@@ -1,35 +1,36 @@
 <head>
-    <title>index</title>
-    <meta Author="viewport" content="width=device-width, initial-scale=1"/>
-    <meta charset="utf-8"/> 
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css"/>
+    <title>add book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <form>
+    <form class="form-control">
             <!-- <p>Cover: <input id="Cover" type="image"></p> -->
         <input type="file" id="Cover" accept="image/gif, image/jpeg, image/png, image/jpg">
         <p>
             Name: <input id="Name" type="text" onfocus="checkInput('Name')" oninput="checkInput('Name')">
-            <font id="Name_alert" color="red"></font>
+            <font id="Name_alert" color="indianred"></font>
         </p>
         <p>
             Author: <input id="Author" type="text" onfocus="checkInput('Author')" oninput="checkInput('Author')">
-            <font id="Author_alert" color="red"></font>
+            <font id="Author_alert" color="indianred"></font>
         </p>
         <p>
             Publisher: <input id="Publisher" type="text" onfocus="checkInput('Publisher')" oninput="checkInput('Publisher')">
-            <font id="Publisher_alert" color="red"></font>
+            <font id="Publisher_alert" color="indianred"></font>
         </p>
         <p>
             Publication Date: <input id="Publication Date" type="date" onfocus="checkInput('Publication Date')" oninput="checkInput('Publication Date')">
-            <font id="Publication Date_alert" color="red"></font>
+            <font id="Publication Date_alert" color="indianred"></font>
         </p>
         <p>
             Quantity: <input id="Quantity" type="text" onfocus="checkInput('Quantity')" oninput="checkInput('Quantity')">
-            <font id="Quantity_alert" color="red"></font>
+            <font id="Quantity_alert" color="indianred"></font>
         </p>
-        <p><input id="submit" type="submit" onclick={window.alert("submitted")}></p>
+        <button class="btn" onclick={window.alert("submitted")}>
+            Submit
+        </button>
     </form>
 
     <script>

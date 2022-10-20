@@ -9,7 +9,7 @@ body {
   color: #fff;
   font-family: 'Muli', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -37,6 +37,33 @@ body {
 .container a {
   text-decoration: none;
   color: rgb(56, 77, 56);
+}
+
+.bookcase a {
+  cursor: pointer;
+  display: inline-block;
+  color: gray;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  text-decoration: none;
+  position: relative;
+  left: 30px;
+  top:40%;
+  -webkit-transition-duration: 0.1s; /* Safari */
+  transition-duration: 0.1s;
+}
+
+.bookcase a:hover {
+  transform: scale(1.05);
+  color: darkgray;
+  font-size: 18px;
+}
+
+.bookcase a:active {
+  transform: scale(0.98);
 }
 
 .btn {
@@ -112,3 +139,33 @@ body {
   /* color: lightblue; */
   transform: translateY(-30px);
 }
+
+table {
+  background: white;
+  color:rgb(56, 77, 56);
+  text-align: center;
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+table th {
+  background:rgb(191, 213, 191);
+}
+
+.bookcase {
+  background-color: white;
+  border-radius: 5px;
+  color: rgb(56, 77, 56);
+  text-align: left;
+  padding: 15px;
+  margin: 15px;
+  height: 400px;
+  width: 200px;
+  float: right;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.bookcase:hover{
+  transform: scale(1.05);
+}
+
